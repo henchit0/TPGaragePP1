@@ -6,10 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-    <title>Estacionamiento</title>
+    <link rel="icon" href="../img/icon.ico">
+    <title>Lista de Usuarios</title>
      <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -35,7 +33,7 @@
       	<ol>
 			<?php
       error_reporting(0);
-			$archivo = fopen("archivos/usuarios.txt", "r") or die("Imposible abrir el archivo");
+			$archivo = fopen("../archivos/usuarios.txt", "r") or die("Imposible abrir el archivo");
 			while(!feof($archivo)) 
 			{
 		 		$objeto = json_decode(fgets($archivo));

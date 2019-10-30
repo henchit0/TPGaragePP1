@@ -15,6 +15,9 @@
             <li class="nav-item">
               <a class="nav-link" href="/rosso.ezequiel/paginas/login.php">Login</a>
             </li>
+            <?php 
+            if (isset($_SESSION['idDeUsuario'])) {
+            ?>
             <li class="nav-item">
               <a class="nav-link" href="/rosso.ezequiel/paginas/ingresoVehiculo.php">Ingresar Vehiculo</a>
             </li>
@@ -27,15 +30,22 @@
             <li class="nav-item">
               <a class="nav-link" href="/rosso.ezequiel/paginas/listarVehiculos.php">Listar Vehiculos</a>
             </li>
+            <?php  
+            }
+            if (isset($_SESSION['idDeUsuario']) && ($_SESSION['perfil'] == "admin")) {
+            ?>
             <li class="nav-item">
               <a class="nav-link" href="/rosso.ezequiel/paginas/historicoVehiculos.php">Historial Vehiculos</a>
             </li>
+            <?php
+            }
+            ?>
             <?php 
             if (isset($_SESSION['idDeUsuario'])) 
             {
               ?> 
             <li class="nav-item">
-              <a class="nav-link" href="acciones/hacerLogout.php">Logout</a>
+              <a class="nav-link" href="/rosso.ezequiel/acciones/hacerLogout.php">Logout</a>
             </li>
             <?php 
               }

@@ -6,9 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="../img/icon.ico">
     <title>Login</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +24,7 @@
     <!-- Begin page content -->
     <main role="main" class="container">
 
-      <form action="acciones/hacerLogin.php" class="form-signin">
+      <form action="../acciones/hacerLogin.php" class="form-signin">
       <div class="text-center mb-4">
         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Login</h1>

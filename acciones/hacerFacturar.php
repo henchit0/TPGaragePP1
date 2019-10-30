@@ -12,7 +12,7 @@
 
 	if (empty($checkPatente)) 
 	{
-		header("Location: ../facturarVehiculo.php?error=campovacio");
+		header("Location: ../paginas/facturarVehiculo.php?error=campovacio");
 		exit();
 	}
 	else
@@ -60,7 +60,7 @@
 				fwrite($historico, json_encode($objetoHistorico)."\n");
 
 
-				header("Location: ../facturarVehiculo.php?cobrar=".$resultado."&ingreso=".$horaEntrada."&salida=".$horaSalida."&estadia=".$contadorFraccion);
+				header("Location: ../paginas/facturarVehiculo.php?cobrar=".$resultado."&ingreso=".$horaEntrada."&salida=".$horaSalida."&estadia=".$contadorFraccion);
 					fclose($archivo);
 				exit();
 			}
@@ -76,8 +76,8 @@
      	if ($borrar) 
      	{
 
-     		$archOriginal = fopen('estacionados.txt', 'a');
-			$archTemporal = fopen('estacionados.tmp', 'a');
+     		$archOriginal = fopen('../archivos/estacionados.txt', 'a');
+			$archTemporal = fopen('../archivos/estacionados.tmp', 'a');
 
 			$probandoPatente = "fff444";
 
@@ -104,7 +104,7 @@
 			{
 				// var_dump($diffSegundos)
 			 //  			die();
-			    rename('estacionados.tmp', 'estacionados.txt');
+			    rename('../archivos/estacionados.tmp', 'estacionados.txt');
 			} else unlink('estacionados.tmp');
 		}
 	}

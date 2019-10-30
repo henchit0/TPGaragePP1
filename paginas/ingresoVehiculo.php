@@ -6,10 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="">
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <link rel="icon" href="../img/icon.ico">
+    <title>Ingreso Vehiculo</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -25,9 +23,9 @@
     </header>
     <!-- Begin page content -->
     <main role="main" class="container">
-      <form action="acciones/hacerVehiculo.php" class="form-signin">
+      <form action="../acciones/hacerVehiculo.php" class="form-signin">
       <div class="text-center mb-4">
-        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
         <h1 class="h3 mb-3 font-weight-normal">Ingreso de vehículo</h1>
       </div>
         <?php if (isset($_GET['exito'])) 
@@ -41,7 +39,7 @@
     </main>
     <footer class="footer">
       <?php  
-        include "componentes/footer.php";
+        include "../componentes/footer.php";
       ?>
     </footer>
     <!-- Bootstrap core JavaScript

@@ -6,10 +6,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="">
-    <title>Sticky Footer Navbar Template for Bootstrap</title>
+    <link rel="icon" href="../img/icon.ico">
+    <title>Facturar Vehiculo</title>
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -18,7 +16,6 @@
     <link href="../css/floating-labels.css" rel="stylesheet">    
   </head>
   <body>
-
     <header>
       <?php  
         include "../componentes/header.php";
@@ -26,13 +23,12 @@
     </header>
     <!-- Begin page content -->
     <main role="main" class="container">
-      <form action="acciones/hacerFacturar.php" class="form-signin">
+      <form action="../acciones/hacerFacturar.php" class="form-signin">
       <div class="text-center mb-4">
         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Facturar vehículo</h1>
       </div>
         <?php 
-        date_default_timezone_set('America/Argentina/Buenos_Aires');
         if (isset($_GET['exito']))
         {        
             echo '<p>Vehiculo facturado!</p>'; 

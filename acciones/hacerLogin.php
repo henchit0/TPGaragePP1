@@ -13,7 +13,7 @@
 	}
 	else
 	{
-		$archivo = fopen("usuarios.txt", "r") or die("Imposible arbrir el archivo");	
+		$archivo = fopen("../archivos/usuarios.txt", "r") or die("Imposible arbrir el archivo");	
 		while(!feof($archivo)) 
 		{
 			$objeto = json_decode(fgets($archivo));
@@ -24,7 +24,7 @@
 				{
 					$_SESSION['idDeUsuario'] = $checkUsuario;
 					$_SESSION['horaIngreso'] = mktime();
-					header("Location: ../login.php");
+					header("Location: ../paginas/login.php");
 					fclose($archivo);
 					exit();
 				}			
