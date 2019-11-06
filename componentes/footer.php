@@ -12,7 +12,7 @@ if(isset($_SESSION['idDeUsuario']))
 	  {
 	?>
 	  <div class="container">
-	    <span class="text-muted">Cuanto ingrese al sistema , aqui vera los datos importantes</span>  
+	    <span class="text-muted">Bienvenidos al Estacionamiento Rosso</span>  
 	  </div>
 	<?php
 }

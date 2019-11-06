@@ -32,16 +32,20 @@
       	<h2>Listado de usuarios</h2>
       	<ol>
 			<?php
-      error_reporting(0);
-			$archivo = fopen("../archivos/usuarios.txt", "r") or die("Imposible abrir el archivo");
-			while(!feof($archivo)) 
-			{
-		 		$objeto = json_decode(fgets($archivo));
-        if (!$objeto == "") {
-          echo "<li>Usuario: ".$objeto->usuario."</li>";
-        }
-			}
-			fclose($archivo);
+
+        $objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+        $consulta =$objetoAccesoDato->RetornarConsulta("select * from usuario");
+        $consulta->execute();     
+        $datos= $consulta->fetchAll(PDO::FETCH_ASSOC);    
+        // var_dump($datos);
+        // die();
+
+        foreach ($datos as $usuario ) 
+        {
+          // var_dump($usuario );
+          echo "<li>Usuario: ".$usuario["nombre"];
+          echo "<br>";
+        }      
 			?>
 		</ol>
 		</div>

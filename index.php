@@ -27,7 +27,7 @@
     <main role="main" class="container">
 
       <h1 class="mt-5">Estacionamiento Rosso</h1>
-      <p class="lead">Bienvenido a Estacionamientos Rosso</p>
+      
     </main>      
     <footer class="footer">
       <?php 

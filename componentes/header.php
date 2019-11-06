@@ -6,50 +6,74 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
+
             <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/index.php">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/rosso.ezequiel/index.php">Home <span class="sr-only">(current)</span></a>          
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/paginas/registro.php">Registrate</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/paginas/login.php">Login</a>
-            </li>
+
             <?php 
-            if (isset($_SESSION['idDeUsuario'])) {
-            ?>
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/paginas/ingresoVehiculo.php">Ingresar Vehiculo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/paginas/facturarVehiculo.php">Facturar Vehiculo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/paginas/listarUsuarios.php">Listar Usuarios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/paginas/listarVehiculos.php">Listar Vehiculos</a>
-            </li>
-            <?php  
-            }
-            if (isset($_SESSION['idDeUsuario']) && ($_SESSION['perfil'] == "admin")) {
-            ?>
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/paginas/historicoVehiculos.php">Historial Vehiculos</a>
-            </li>
-            <?php
-            }
-            ?>
-            <?php 
-            if (isset($_SESSION['idDeUsuario'])) 
-            {
-              ?> 
-            <li class="nav-item">
-              <a class="nav-link" href="/rosso.ezequiel/acciones/hacerLogout.php">Logout</a>
-            </li>
-            <?php 
+              if (isset($_SESSION['idDeUsuario']) && $_SESSION['perfil'] == 'admin')
+              {
+             ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/ingresoVehiculo.php">Ingresar Vehiculo</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/facturarVehiculo.php">Facturar Vehiculo</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/listarVehiculos.php">Listar Vehiculos</a>
+                </li>
+                   
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/listarUsuarios.php">Listar Usuarios</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/historicoVehiculos.php">Historial Vehiculos</a>
+                </li>
+        
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/acciones/hacerLogout.php">Logout</a>
+                </li>
+              <?php 
               }
-            ?>
+              elseif (isset($_SESSION['idDeUsuario']) && $_SESSION['perfil'] == 'cajero') 
+              {                
+              ?>            
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/ingresoVehiculo.php">Ingresar Vehiculo</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/facturarVehiculo.php">Facturar Vehiculo</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/listarVehiculos.php">Listar Vehiculos</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/acciones/hacerLogout.php">Logout</a>
+                </li>
+              <?php  
+              }
+              else
+              {
+              ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/registro.php">Registrate</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="/rosso.ezequiel/paginas/login.php">Login</a>
+                </li>
+              <?php 
+              }
+              ?>
+           
           </ul>
           <!-- <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

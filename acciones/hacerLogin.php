@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	include "AccesoDatos.php";
 
 	$checkUsuario = $_GET['inputUsuario'];
 	$checkPassword = $_GET['inputPassword'];
@@ -13,19 +14,28 @@
 	}
 	else
 	{
-		$archivo = fopen("../archivos/usuarios.txt", "r") or die("Imposible arbrir el archivo");	
-		while(!feof($archivo)) 
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("select * from usuario");
+		$consulta->execute();			
+		$datos= $consulta->fetchAll(PDO::FETCH_ASSOC);		
+		// var_dump($datos);
+		// die();
+
+		foreach ($datos as $usuario ) 
 		{
-			$objeto = json_decode(fgets($archivo));
-			if ($objeto->usuario == $checkUsuario) 
+			// var_dump($usuario );
+			// echo "su nombre es".$usuario["nombre"];
+			// echo "<br>";
+		
+			if ($usuario['nombre'] == $checkUsuario) 
 			{	
 				$booUsuario = 1;
-				if ($objeto->password == $checkPassword)
+				if ($usuario['clave'] == $checkPassword)
 				{
 					$_SESSION['idDeUsuario'] = $checkUsuario;
+					$_SESSION['perfil'] = $usuario['perfil'];
 					$_SESSION['horaIngreso'] = mktime();
 					header("Location: ../paginas/login.php");
-					fclose($archivo);
 					exit();
 				}			
 			}
@@ -43,7 +53,6 @@
 			exit();
 		}
 
-		fclose($archivo);
 	}	
 	header("Location: ../paginas/login.php");
 	exit();
